@@ -11,15 +11,19 @@
 			"enableNonRootDocker": "true",
 			"moby": "true"
 		},
-		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+		        "version": "latest",
+			"helm": "latest",
+			"minikube": "none"
+		},
 		"ghcr.io/devcontainers-contrib/features/kind:1": {}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	 "forwardPorts": ["8080"],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "docker --version",
+	 "postCreateCommand": "kind create cluster",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
